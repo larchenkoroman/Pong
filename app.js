@@ -7,4 +7,11 @@ class GameView {
         this.height = canvas.height;
         this.offsetTop = canvas.offsetTop;
     }
+
+    draw(...entities) {
+        this.ctx.fillStyle = 'black';
+        this.ctx.fillRect(0, 0, this.width, this.height);
+
+        entities.forEach(entity => entity.draw(this.ctx));
+    }
 }
